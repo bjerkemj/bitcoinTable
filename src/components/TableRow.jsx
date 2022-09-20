@@ -1,4 +1,4 @@
-export default (data) => {
+export default ({data}) => {
     
     return(
         <tr key={data.time}>

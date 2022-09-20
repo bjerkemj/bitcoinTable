@@ -1,20 +1,20 @@
 import React from "react";
 
-export default ( postsPerPage, totalPosts, paginate ) => {
+export default ( {postsPerPage, totalPosts, paginate} ) => {
   const pageNumbers = [];
 
-  for (let i = 0; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
 
   return (
-    <nav className="justify-content-cente">
-      <ul className="pagination justify-content-cente">
+    <nav className="justify-content-center">
+      <ul className="pagination justify-content-center">
         {pageNumbers.map((i) => (
           <li key={i} className="page-item">
-            <a onClick={() => paginate(i)} href="!#" className="page-link">
+            <button onClick={() => paginate(i)} className="page-link">
               {i}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
